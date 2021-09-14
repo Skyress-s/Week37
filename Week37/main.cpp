@@ -53,6 +53,7 @@ int main() {
         cout << "Main Menu Jahnnes tasks 1-5: ";
         char ans{};
         cin >> ans;
+        ClearCin();
 
         switch (tolower(ans))
         {

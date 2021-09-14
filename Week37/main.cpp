@@ -11,6 +11,9 @@ using std::cin;
 
 void ClearCin();
 
+#pragma region Meisam
+
+
 
 //decleration of function // function prototype
 void Task1();
@@ -33,10 +36,68 @@ void task4();
 void task5();
 int getLargestNum(int numbers[], int size);
 
+
+#pragma endregion
+
+void JTask1();
+void JTask2();
+void JTask3();
+void JTask4();
+void JTask5();
+
+
+
 int main() {
-    task5();
-    
+    while (true) {
+        system("cls");
+        cout << "Main Menu Jahnnes tasks 1-5: ";
+        char ans{};
+        cin >> ans;
+
+        switch (tolower(ans))
+        {
+        case'1':
+            JTask1();
+            break;
+
+        case'2':
+            JTask2();
+            break;
+
+        case'3':
+            JTask3();
+            break;
+
+        case'4':
+            JTask4();
+            break;
+
+        case'5':
+            JTask5();
+            break;
+
+        case 'q':
+            exit(0);
+            break;
+
+        default:
+            break;
+        }
+
+        system("pause");
+    }
+
+    return 0;
 }
+
+void ClearCin() {
+    std::cin.clear();                   //Clears eventual errors from buffer
+    std::cin.ignore(32767, '\n');       //Clears the buffer if anything is there
+}
+
+#pragma region Meisam
+
+
 
 //definition of task 1
 void Task1() {
@@ -190,7 +251,101 @@ int getLargestNum(int numbers[], int size) {
     return highest;
 }
 
-void ClearCin() {
-    std::cin.clear();                   //Clears eventual errors from buffer
-    std::cin.ignore(32767, '\n');       //clears the buffer if anything is there
+#pragma endregion
+
+int powerOfTwo(int n1) {
+    int n = pow(n1, 2);
+    return n;
+}
+
+void JTask1() {
+    cout << "enter a number to get second power of : ";
+    float ans{};
+    cin >> ans;
+    cout << powerOfTwo(ans) << endl;
+}
+
+void JTask2() {
+
+    const int n = 5;
+    
+    int arr[n];
+
+    
+}
+
+
+float jsum(vector<float> arr) {
+    float sum{};
+    for (int i = 0; i < arr.size(); i++)
+    {
+        sum += arr[i];
+    }
+    return sum;
+}
+int jsum(vector<int> arr) {
+    int sum{};
+    for (int i = 0; i < arr.size(); i++)
+    {
+        sum += arr[i];
+    }
+    return sum;
+}
+void JTask3(){
+    vector<float> fArr = { 1.42, 5.89, 42.00, 53.3123 };
+    vector<int> iArr = { 1, 5, 42, 53 };
+
+    cout << jsum(fArr) << endl;
+
+    cout << jsum(iArr) << endl;
+
+}
+
+char myToUpper(char c) {
+    return (c - 32);
+}
+void JTask4() {
+    cout << " Please enter a char to convert to upper case : ";
+    char ans{};
+    cin >> ans;
+    ClearCin();
+
+    ans = myToUpper(ans);
+    cout << ans << endl;
+   
+    
+}
+
+vector<char> getArrRestOfAlph(char ch) {
+    int startOfAlph = 97;   //inclusive
+    int endOfAlph = 122;    //inclusive
+
+    //if you want to print it directly
+    /*for (int i = ch + 1; i < endOfAlph + 1; i++)
+    {
+        cout << (char)i << endl;
+    }*/
+
+    vector<char> aarr{};
+    for (int i = ch + 1; i < endOfAlph + 1; i++)
+    {
+        aarr.push_back(i);
+    }
+    return aarr;
+}
+void JTask5() {
+    system("cls");
+    cout << "enter a char : ";
+
+    char ans{};
+    cin >> ans;
+    ClearCin();
+    cout << endl << endl;
+
+    vector<char> arr =  getArrRestOfAlph(ans);
+
+    for (int i = 0; i < arr.size(); i++)
+    {
+        cout << arr[i] << endl;
+    }
 }

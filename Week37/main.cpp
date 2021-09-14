@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 using std::vector;
+#include <iomanip>
 
 using std::cout;
 using std::endl;
@@ -27,9 +28,13 @@ void func4();
 //task3
 void task3();
 
+void task4();
+
+void task5();
+int getLargestNum(int numbers[], int size);
 
 int main() {
-    task3();
+    task5();
     
 }
 
@@ -66,7 +71,6 @@ int Compare(int numOne, int numTwo) {
     }
     return 0;
 }
-
 
 void Task2() {
     char vowels[] = { 'a', 'e', 'i', 'o', 'u', 'y'};
@@ -140,8 +144,50 @@ void task3() {
         chars.push_back(0);
     }
 
-    cout << "Current size is " << chars.size() << endl;
+    cout << "Current size is " << chars.size() << " :)" << endl;
 
+}
+
+
+void task4() {
+    vector<char> numbers{ '1','2','3','4','5','6','7','8','9' };
+
+    
+    
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            cout << numbers[j + i * 3] << "      ";
+        }
+        cout << endl << endl;
+    }
+}
+
+
+void task5() {
+    int nums[] = {1,6,4,100,4,50,57,40,10,113,4,66, 661, 65};
+
+    int sizeArr = sizeof(nums) / sizeof(nums[0]);
+
+    int bbb = getLargestNum(nums, sizeArr);
+
+    cout << bbb << endl;
+
+
+}
+
+int getLargestNum(int numbers[], int size) {
+    int highest{};
+    for (int i = 0; i < size; i++)
+    {
+        if (highest < numbers[i])
+        {
+            highest = numbers[i];
+        }
+    }
+
+    return highest;
 }
 
 void ClearCin() {

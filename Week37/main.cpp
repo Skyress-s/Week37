@@ -1,26 +1,39 @@
 #include <iostream>
 #include <string>
+#include <vector>
+using std::vector;
 
 using std::cout;
 using std::endl;
 using std::cin;
 
+
 void ClearCin();
 
 
-/// <summary>
-/// a task where the user asks for two ints and prints the biggest one
-/// </summary>
+//decleration of function // function prototype
 void Task1();
 int Compare(int, int);
 
 void Task2();
 void PrintToUpper(char);
 
+//practicing calling funds prototypes
+void func1();
+void func2();
+void func3();
+void func4();
+
+//task3
+void task3();
+
+
 int main() {
-    Task2();
+    task3();
+    
 }
 
+//definition of task 1
 void Task1() {
     int a1{};
     int a2{};
@@ -36,9 +49,6 @@ void Task1() {
     cout << endl;
 
     Compare(a1, a2);
-    
-
-
 }
 
 int Compare(int numOne, int numTwo) {
@@ -74,7 +84,6 @@ void Task2() {
         {
             isVowel = true;
         }
-        
     }
 
     if (isVowel)
@@ -93,8 +102,49 @@ void PrintToUpper(char ch) {
     cout << ch2 << endl;
 }
 
+//practicing calling funcs definitions
+
+void func1() {
+    cout << "Welcome to func1" << endl;
+    cout << "Leaving func1" << endl;
+}
+void func2() {
+    cout << "Welcome to func2" << endl;
+    func1();
+    cout << "Leaving func2" << endl;
+}
+void func3() {
+    cout << "Welcome to func3" << endl;
+    func2();
+    cout << "Leaving func3" << endl;
+}
+//start by calling this one
+void func4() {
+    cout << "Welcome to func4" << endl;
+    func3();
+    cout << "Leaving func4" << endl;
+}
+
+//task3
+void task3() {
+    int length = 5;
+    vector<char> chars(2, 0);
+    cout << "Current size is " << chars.size() << endl;
+    cout << "How many new elements/spaces do you want to add? : ";
+    int ans{};
+    cin >> ans;
+
+
+    for (size_t i = 0; i < ans; i++)
+    {
+        chars.push_back(0);
+    }
+
+    cout << "Current size is " << chars.size() << endl;
+
+}
 
 void ClearCin() {
-    std::cin.clear();    //Clears eventual errors from buffer
-    std::cin.ignore(32767, '\n');    //clears the buffer if anything is there
+    std::cin.clear();                   //Clears eventual errors from buffer
+    std::cin.ignore(32767, '\n');       //clears the buffer if anything is there
 }
